@@ -1,1 +1,35 @@
-
+server:
+  port: 8420
+  error:
+    path: /error
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  server:
+    port: 8421
+spring:
+  main:
+    web-application-type: reactive
+  reactor:
+    debug-agent:
+      enabled: true
+  webflux:
+    static-path-pattern: /static/**
+  data:
+    mongodb:
+      database: userme
+      port: 27017
+      host: localhost
+      username: userme_db_admin
+      password: userme_db_admin_pass
+  application:
+    name: USErME
+    admin:
+      enabled: true
+  security:
+    user:
+      name: userme_super_admin
+      password: Admin123@!5
