@@ -17,7 +17,8 @@ spring:
     debug-agent:
       enabled: true
   webflux:
-    static-path-pattern: /static/**
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
   data:
     mongodb:
       database: userme
@@ -29,7 +30,5 @@ spring:
     name: USErME
     admin:
       enabled: true
-  security:
-    user:
-      name: userme_super_admin
-      password: Admin123@!5
+  banner:
+    location: static/banner-ascii-art.txt
